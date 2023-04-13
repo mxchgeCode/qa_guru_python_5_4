@@ -23,9 +23,11 @@ def test_rectangle():
     b = 20
 
     perimeter = a * 2 + b * 2
+    print(perimeter, end=' ; ')
     assert perimeter == 60
 
     area = a * b
+    print(area,end='')
     assert area == 200
 
 
@@ -37,10 +39,11 @@ def test_circle():
     r = 23
 
     area = math.pi * r ** 2
+    print(area, end=' ; ')
     assert area == 1661.9025137490005
 
-
     length = 2 * math.pi * r
+    print(length, end='')
     assert length == 144.51326206513048
 
 
@@ -50,8 +53,8 @@ def test_random_list():
     """
     random.randint(1, 100)
 
-
     l = sorted([random.randint(1, 100) for _ in range(10)])
+    print(l, end='')
     assert len(l) == 10
     assert l[0] < l[-1]
 
@@ -63,7 +66,7 @@ def test_unique_elements():
     l = [1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 8, 9, 10, 10]
 
     l = list(set(l))
-
+    print(l,end='')
     assert isinstance(l, list)
     assert len(l) == 10
     assert l == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -80,6 +83,6 @@ def test_dicts():
     second = [1, 2, 3, 4, 5]
 
     d = dict(zip(first, second))
-
+    [print(value, end=' ') for key, value in d.items()]
     assert isinstance(d, dict)
     assert len(d) == 5
